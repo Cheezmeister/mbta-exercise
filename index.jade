@@ -1,0 +1,55 @@
+mixin image(source, text)
+  img(alt=text src='/assets/' + source)
+
+mixin css(source)
+  link(rel='stylesheet' href=source)
+
+mixin javascript(source)
+  script(type="text/javascript" src=source)
+
+doctype html
+html(lang="en")
+  head
+    meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+    title Brendan Luchen
+    meta(name="description" content="Brendan Luchen, Full-Stack Engineer. Scripter of Java, Tisane of Coffee, Writer of Limericks, Frame Pointer Extraordinaire")
+    +css('http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic')
+    // +css('http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
+    // +css('bootstrap.min.css')
+    // +css('animate.css')
+    +css('skeleton.css')
+    // +javascript('wow.js')
+    // +javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyB20MgpK8uazyS0pZWfkMiA6mzwLkCpzOA')
+    
+    ////////////////////// 
+    // Style
+    ////////////////////// 
+    style
+      :stylus
+        body
+          background grey
+          color white
+
+        #board
+          height 100px
+          background salmon
+          border-radius 5px
+          border 1px solid red
+
+  ////////////////////// 
+  // Content
+  ////////////////////// 
+  body(class='document')
+    script.
+      console.log('it owrks');
+
+    section#top
+      h2 Heading
+
+    section#main
+      div#board
+
+
+    footer#bottom
+       p Want to build things together? [Drop me a line.](mailto:bml@luchenlabs.com)
