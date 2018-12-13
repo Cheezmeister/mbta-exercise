@@ -25,27 +25,50 @@ html(lang="en")
       :stylus
         body
           background grey
-          color white
+          color white !important
+
+          h2
+            text-align center
 
         .board
           border-radius 5px
           border 1px solid red
-          padding 2px
 
           .row
-            &:heading
-              text-transform uppercase
+            border-bottom 1px solid #fee
+            padding 2px
+
+            &.heading
+              font-weight bold
             &:last-child
               border none
-            border-bottom 1px solid #fee
+
+          .destination
+            border 1px solid black
+            border-radius 3px
+            padding 0 1em 0 1em
 
         #north .board
           background salmon
           border-color red
 
+          .heading
+            background #800
+
         #south .board
           background #59b
           border-color blue
+
+          .heading
+            background #008
+
+        #bottom
+          text-align center
+          background #444
+          position fixed
+          bottom 0
+          width 100%
+          margin 0 -10px 0 -10px
 
         .debug
           background black
@@ -70,6 +93,7 @@ html(lang="en")
             span Track#
           .three.columns
             span Status
+        .content
 
     section#south
       h2 South Station
@@ -86,8 +110,17 @@ html(lang="en")
             span Track#
           .three.columns
             span Status
+        .content
 
     footer#bottom
-      p Here is some bottom matter.
+      p
+        span Made with <3 by&nbsp;
+        a(href="//twitter.com/chzmstr") @chzmstr
+        span  &nbsp;for consideration by&nbsp;
+        a(href="https://www.mbta.com/") MBTA.
+        span &nbsp; &copy; 2018&nbsp;
+        a(href="//luchenlabs.com") Brendan Luchen
+        span . All rights reserved.
+
       .debug
         tt#response
