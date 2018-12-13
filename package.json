@@ -13,6 +13,7 @@
   "devDependencies": {
     "coffeescript": "^2.3.2",
     "gulp": "^3.9.1",
+    "gulp-coffee": "^3.0.3",
     "gulp-pug": "^4.0.1",
     "jstransformer-stylus": "^1.5.0",
     "pug": "^2.0.0"

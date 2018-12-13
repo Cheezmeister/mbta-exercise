@@ -10,46 +10,84 @@ mixin javascript(source)
 doctype html
 html(lang="en")
   head
+    title Commuter Rails Departure Board
     meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
-    title Brendan Luchen
-    meta(name="description" content="Brendan Luchen, Full-Stack Engineer. Scripter of Java, Tisane of Coffee, Writer of Limericks, Frame Pointer Extraordinaire")
+    meta(name="description" content="MBTA Commuter Rail Exercise")
     +css('http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT:regular,italic')
-    // +css('http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
-    // +css('bootstrap.min.css')
-    // +css('animate.css')
     +css('skeleton.css')
-    // +javascript('wow.js')
-    // +javascript('https://maps.googleapis.com/maps/api/js?key=AIzaSyB20MgpK8uazyS0pZWfkMiA6mzwLkCpzOA')
-    
-    ////////////////////// 
+    +javascript('dashboard.js')
+
+    //////////////////////
     // Style
-    ////////////////////// 
+    //////////////////////
     style
       :stylus
         body
           background grey
           color white
 
-        #board
-          height 100px
-          background salmon
+        .board
           border-radius 5px
           border 1px solid red
+          padding 2px
 
-  ////////////////////// 
+          .row
+            &:heading
+              text-transform uppercase
+            &:last-child
+              border none
+            border-bottom 1px solid #fee
+
+        #north .board
+          background salmon
+          border-color red
+
+        #south .board
+          background #59b
+          border-color blue
+
+        .debug
+          background black
+
+  //////////////////////
   // Content
-  ////////////////////// 
+  //////////////////////
   body(class='document')
-    script.
-      console.log('it owrks');
 
-    section#top
-      h2 Heading
+    section#north
+      h2 North Station
 
-    section#main
-      div#board
+      .board
+        .row.heading
+          .two.columns
+            span Time
+          .five.columns
+            span Destination
+          .one.columns
+            span Train#
+          .one.columns
+            span Track#
+          .three.columns
+            span Status
 
+    section#south
+      h2 South Station
+
+      .board
+        .row.heading
+          .two.columns
+            span Time
+          .five.columns
+            span Destination
+          .one.columns
+            span Train#
+          .one.columns
+            span Track#
+          .three.columns
+            span Status
 
     footer#bottom
-       p Want to build things together? [Drop me a line.](mailto:bml@luchenlabs.com)
+      p Here is some bottom matter.
+      .debug
+        tt#response
